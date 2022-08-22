@@ -1,0 +1,26 @@
+name: win_shared_folder
+description: A new Flutter package project.
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: ">=2.17.6 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  ffi: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  assets:
+    - lib.dll
+
+scripts:
+  build_native: cd example && flutter clean && cd ../native_layer/shared_folder && dotnet publish /p:NativeLib=Shared /p:SelfContained=true -r win-x64 -c debug && copy /b/v/y .\bin\debug\net6.0\win-x64\native\shared_folder.dll ..\..\lib.dll
+  start: cd example && flutter run -d windows
