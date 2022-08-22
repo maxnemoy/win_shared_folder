@@ -14,6 +14,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late SharedFolder folder;
+  List<String>? folders;
 
   @override
   void initState() {
@@ -29,6 +30,18 @@ class _MyAppState extends State<MyApp> {
     debugPrint(folder.callExternalInt(512, 512).toString());
   }
 
+  void setConfig() {
+    folder.setPath("\\\\labn\\shared");
+    folder.setUser("maxnemoy", "нфтфсруьещ");
+    folder.showConfig();
+  }
+
+  void readFolders() {
+    setState(() {
+      folders = folder.getFolders("\\");
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -37,7 +50,13 @@ class _MyAppState extends State<MyApp> {
         children: [
           TextButton(onPressed: callIntFunc, child: const Text("Int check")),
           TextButton(
-              onPressed: callStringFunc, child: const Text("String check"))
+              onPressed: callStringFunc, child: const Text("String check")),
+          TextButton(onPressed: setConfig, child: const Text("setup")),
+          TextButton(onPressed: readFolders, child: const Text("getFolders")),
+          ...folders?.map((e) => ListTile(
+                    title: Text(e),
+                  )) ??
+              []
         ],
       )),
     );
