@@ -1,14 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UcPUyPkY0SjH07+crKGNOcE/5Dtke+GD8PWAtbtkZeB+YDRbkLSRW//4xIqtEVkV+WavJMH8z4ggLkBmr8g7zw==",
+  "dgSpecHash": "i9VXDnUfbRlxJ9GwAAWHtB66WgTdfuMuZKvWit7C0vpSRTZTEw/VigVl013izwT7gs5/DMrqZHmRCpf++h8M9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\maxnemoy\\source\\win_shared_folder\\native_layer\\shared_folder\\shared_folder.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\maxnemoy\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\7.0.0-preview.7.22375.6\\microsoft.dotnet.ilcompiler.7.0.0-preview.7.22375.6.nupkg.sha512",
-    "C:\\Users\\maxnemoy\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\7.0.0-preview.7.22375.6\\runtime.win-x64.microsoft.dotnet.ilcompiler.7.0.0-preview.7.22375.6.nupkg.sha512",
-    "C:\\Users\\maxnemoy\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.8\\microsoft.netcore.app.runtime.win-x64.6.0.8.nupkg.sha512",
-    "C:\\Users\\maxnemoy\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.8\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.8.nupkg.sha512",
-    "C:\\Users\\maxnemoy\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.8\\microsoft.aspnetcore.app.runtime.win-x64.6.0.8.nupkg.sha512"
+    "C:\\Users\\maxnemoy\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\7.0.0-preview.7.22375.6\\microsoft.dotnet.ilcompiler.7.0.0-preview.7.22375.6.nupkg.sha512"
   ],
   "logs": []
 }
