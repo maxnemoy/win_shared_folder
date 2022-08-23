@@ -6,24 +6,22 @@ namespace shared_folder;
 #pragma warning disable CS8600
 public class Entory
 {
-    static string? networkPath;//@"\\labn\shared";
-    static NetworkCredential? credentials; //new NetworkCredential(@"maxnemoy", "нфтфсруьещ");
+    static string? networkPath;
+    static NetworkCredential? credentials;
     static string myNetworkPath = string.Empty;
-
-
 
     [UnmanagedCallersOnly(EntryPoint = "setPath")]
     public static void SetPath(IntPtr pathString)
     {
-        string path = Marshal.PtrToStringAnsi(pathString);;
+        string path = Marshal.PtrToStringUTF8(pathString);;
         networkPath = path;
     }
 
     [UnmanagedCallersOnly(EntryPoint = "setUser")]
     public static void SetCredential(IntPtr userString, IntPtr passwordString)
     {
-        string user = Marshal.PtrToStringAnsi(userString);
-        string password = "нфтфсруьещ";//Marshal.PtrToStringAnsi(passwordString);
+        string user = Marshal.PtrToStringUTF8(userString);
+        string password = Marshal.PtrToStringUTF8(passwordString);
         credentials = new NetworkCredential(user, password);
     }
 
@@ -36,7 +34,7 @@ public class Entory
     [UnmanagedCallersOnly(EntryPoint = "getFolders")]
     public static IntPtr GetFolders(IntPtr pathString)
     {
-        string path = Marshal.PtrToStringAnsi(pathString);
+        string path = Marshal.PtrToStringUTF8(pathString);
 
         string folders = "";
         using (new ConnectToSharedFolder(networkPath!, credentials!))
@@ -61,8 +59,8 @@ public class Entory
     public static IntPtr Strings(IntPtr first, IntPtr second)
     {
         #pragma warning disable CS8600
-        string firstString = Marshal.PtrToStringAnsi(first);
-        string SecondString = Marshal.PtrToStringAnsi(second);
+        string firstString = Marshal.PtrToStringUTF8(first);
+        string SecondString = Marshal.PtrToStringUTF8(second);
 
         string result = $"{firstString} {SecondString}";
 
